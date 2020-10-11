@@ -1,0 +1,17 @@
+body{
+    color: black;
+}.cont{
+    margin:30px;
+}
+.gallery{
+    height: 150px;
+    width: 150px;
+}
+.gl{
+    display: flex;
+}
+.in{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}

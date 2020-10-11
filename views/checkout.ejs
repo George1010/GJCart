@@ -1,0 +1,60 @@
+
+
+<%- include ('./layouts/header.ejs') -%>
+
+<div style="margin: 30px;">
+
+<h2 class="page-title" style="color: black;">CheckOut</h2>
+<br><br>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<table class="table table-striped">
+
+    <thead>
+        <tr class="home">
+            <th>Product</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Product Image</th>
+            <th>Qty</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% carts.forEach(function(p){
+
+            if(p.PersonId==id){
+
+                product.forEach((pe)=>{ 
+
+                    if(p.ObjectId==pe._id){%>
+
+            <tr id="id_<%= p._id %>" class="<%= pe.title %>">
+            <td><%= pe.title %></td>
+            <td>₹<%= parseFloat(pe.price).toFixed(2)%></td>
+            <td><%= pe.category %></td>
+            <td>
+            <img src="/product_images/<%= p.ObjectId%>/<%=pe.image%>" height="100px" width="90px">  
+            </td>
+            <td><a style="color: black;" href='/cart/<%=id%>/<%=p.ObjectId%>/reduce'>-</a>&nbsp;<%=p.qty%>&nbsp;<a style="color: black;" href='/cart/<%=id%>/<%=p.ObjectId%>/increase'>+</a></td>
+
+            <td><a class="a1" href="/products/<%=p.ObjectId%>/<%=pe.slug%>">View More</a></td>
+            <td><a class="a1" href="/products/<%=p.ObjectId%>/<%=pe.slug%>">Buy Now</a></td>
+
+        </tr>
+        <% }
+    })
+    }
+}); %>
+    </tbody>
+</table>
+
+</div><br><br>
+</div>
+</div>
+</div>
+<%- include('./layouts/footer') %>

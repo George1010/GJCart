@@ -1,0 +1,28 @@
+<%- include ('../layouts/adminheader.ejs') -%>
+<script>
+    document.getElementById('c').classList.add('active')
+</script>
+<link rel="stylesheet" type="text/css" href="/css/addpage.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+
+<div class="cont">
+<h2>EDIT CATEGORY</h2><br>
+<button class="back"><a href="/admin/cat" class="a">back to CATEGORY</a></button><br><br>
+
+<form method="POST"   action="/admin/cat/editcat/<%= id %>">
+    <div class="formgroup">
+        <label for="">TITLE</label>
+        <input type="text" name="title" value="<%= title%>" placeholder="title">
+    </div>
+    <div class="formgroup">
+        <label for="">SLUG</label>
+        <input type="text" name="slug" value="<%= slug%>" placeholder="slug">
+    </div>
+<br><br>
+    <button class="btn">SUBMIT</button>
+    <br><bR><br><br><br><br><br><br><br><br><br><br><br><br>
+</form>
+</div>
+
+
+<%- include ('../layouts/footer.ejs') -%>

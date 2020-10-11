@@ -1,0 +1,41 @@
+
+*{
+    margin:0;
+}
+body{
+    color:blueviolet;
+
+}
+.navbar{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+
+}
+
+ul{
+    width: 100%;
+
+    list-style-type: none;
+    height:inherit;
+
+
+}
+li{
+    
+    display: inline;
+}
+li:hover{
+    background-color: burlywood;
+}
+a{
+    padding: 10px;
+    height: 50px;
+}
+a:hover{
+    background-color: khaki;
+}
+h1{
+    font-size: 30px;
+    text-shadow: 0 0 10px;
+}

@@ -1,0 +1,112 @@
+*{
+	margin:0;
+}
+
+.navbar{
+	background-color: cadetblue;
+	width:100%;
+	padding: 0px;
+}
+ul{
+	list-style: none;
+	margin: 0;
+}
+.a1{
+	color: black;
+}
+.search{
+	width: 30vw;
+	text-align: center;
+	height: 25px;
+	margin-left: 25vw;
+	margin-right: 5px; 
+	border-radius: 5px;
+	border-style: none;
+	outline: none;
+}
+
+.but{
+	height: 25px;
+	border-radius: 5px;
+	border-style: none;
+	outline: none;
+	background-color: green;
+	color:white;
+
+
+}
+li{
+
+	display: inline-block;
+	padding: 20px;
+}
+a{
+	color:white;
+	text-decoration: none;
+	height: 150px;
+
+}
+a:hover{
+	text-decoration: none;
+}
+li:hover{
+	background-color: rgb(155, 193, 194);
+	;
+	color: black;
+
+}
+.active{
+	background-color: white;
+	color: black;
+}
+.active a{
+	color: black;
+}
+li:hover a{
+	color:black;
+}
+.back{
+	background-color: rgb(95, 226, 154);
+	border-radius: 10px;
+	color: black;
+	box-shadow: 0 0 15px rgb(187, 255, 187);
+}
+.act{
+	background-color: rgb(95, 158 ,160);
+}
+.act .l{
+	color: white;
+
+}
+.l{
+	color: black;
+}
+
+.align{
+	margin:0px;
+	padding:10px;
+	width:250px;
+	text-align: center;
+	box-shadow: 5px 5px 10px cadetblue;
+	transition:box-shadow 2s;
+}
+.pimage{
+	height: 200px;width: 200px;
+}
+.vd{
+	color: cadetblue;
+}
+.align:hover{
+	box-shadow: -5px -5px 15px cadetblue;
+}
+.gallery{
+	margin: 0px;
+}
+.table td{
+	vertical-align:middle !important;
+}
+.msg{
+	background-color: rgb(207, 98, 98);
+	color:white;
+	padding:5px;
+}
