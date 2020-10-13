@@ -33,8 +33,12 @@
         <div class="col-xs-12 col-md-10">
             <p><%= p.desc %></p>
             <p>$<%= parseFloat(p.price).toFixed(2) %></p>
-            <p><a href="/cart/add/<%= p.slug %>">Add to cart</a></p>
-
+            <%if(typeof name!=="undefined"){%>
+            <p><a href="/cart/add/<%= p.slug %>" style="color:#216e65">Add to cart</a></p>
+            <%}else
+            {%>
+                <p><a href="/user/login" style="color:#279b8d">Login to Add to Cart</a></p>
+            <%}%>
         </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>

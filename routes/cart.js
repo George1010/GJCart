@@ -57,7 +57,7 @@ router.get('/add/:product',(req,res)=>{
 
 
                 var po=p.category;
-                cart.find((err,c)=>{
+                Cart.find((err,c)=>{
                     if(err)
                     console.log(err)
                     else

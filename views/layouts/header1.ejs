@@ -31,20 +31,4 @@
 	</div>
 
 	<br><br>
-	<div class="container">
 
-		<div class="row">
-			<div class="col-xs-12 col-md-3">
-				<h3>Categories</h3>
-				<ul class="list-group">
-					<li class="list-group-item" id="all"><a class="l"  href="/products">All products</a></li>
-					<% categories.forEach(function(c){ %>
-						<li class="list-group-item " id="<%= c.title%>"><a class="l" href="/products/<%= c.title%>"><%= c.title %></a></li>
-					<% }); %>
-				</ul>
-				<br>
-				<br>
-			</div>
-			<div class="col-xs-12 col-md-1"></div>
-			<div class="col-xs-12 col-md-8 gj">
-				
