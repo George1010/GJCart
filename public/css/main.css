@@ -13,6 +13,14 @@ ul{
 	list-style: none;
 	margin: 0;
 }
+.row1{
+	padding-left:50px;
+
+	padding:50px;
+
+	width:inherit;
+	box-shadow:0 0 15px 5px cadetblue ;
+}
 .a1{
 	color: black;
 }
