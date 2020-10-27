@@ -9,8 +9,8 @@
 
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <h1><%=p.title%></h1>
     <div class="row">
+    <h1><%=p.title%></h1><br><br>
 
          <div class="col-xs-12 col-md-8">
                 <img class="spi" style="height: 400px;width:inherit;"src="/product_images/<%= p.id %>/<%= p.image %>" alt="">
@@ -32,7 +32,7 @@
         </div>
         <div class="col-xs-12 col-md-10">
             <p><%= p.desc %></p>
-            <p>$<%= parseFloat(p.price).toFixed(2) %></p>
+            <p>₹<%= parseFloat(p.price).toFixed(2) %></p>
             <%if(typeof name!=="undefined"){%>
             <p><a href="/cart/add/<%= p.slug %>" style="color:#216e65">Add to cart</a></p>
             <%}else
