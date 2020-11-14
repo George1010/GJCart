@@ -1,4 +1,4 @@
 # GJCart
 
 
-website url: www.gjcart-web.herokuapp.com
+website url: gjcart-web.herokuapp.com
