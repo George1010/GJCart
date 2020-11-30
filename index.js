@@ -127,7 +127,7 @@ app.use('/',pages);
 
 
 var port=process.env.PORT||3000
-app.listen(port,'192.168.29.203',()=>{
+app.listen(port,()=>{
     console.log("Started");
 });
 
