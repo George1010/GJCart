@@ -1,0 +1,59 @@
+
+
+<%- include ('./layouts/h.ejs') -%>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+    <div class="row1">
+        <h2><%=p.title%></h2>
+        <br>
+        <Br>
+         <div class="gl col-xs-12 col-md-10">
+                <img class="spi" style="height: 400px;width:inherit;;border: 1px solid black;"src="/product_images/<%= p.id %>/<%= p.image %>" alt="">
+                
+        
+        <br>
+        <br>
+        
+        <div class="col-xs-10">
+            <ul class="gallery">
+                <% galleryImages.forEach(function(image){ %>
+                 <% if (image != "thumbs") { %>
+                 
+                    <a data-fancybox="gallery" href="/product_images/<%= p.id %>/gallery/<%= image %>">
+                        <img src="/product_images/<%= p.id %>/gallery/thumbs/<%= image %>" alt="" class="proimg">
+                    </a>
+                
+                <% } %>
+                <% }); %>
+                <br>
+                <br>
+            </ul>
+        </div>
+    </div>
+        <div class="col-xs-12 col-md-10">
+            <p><%= p.desc %></p>
+            <p>$<%= parseFloat(p.price).toFixed(2) %></p>
+            <%if(typeof name!=="undefined"){%>
+            <p><a href="/cart/add/<%= p.slug %>" style="color:#216e65">Add to cart</a></p>
+            <%}else
+            {%>
+                <p><a href="/user/login" style="color:#279b8d">Login to Add to Cart</a></p>
+            <%}%>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    
+    
+    </div>
+    <br>
+    <br>
+        <br>
+</div>
+</div>
+<%- include ('./layouts/footer.ejs') -%>

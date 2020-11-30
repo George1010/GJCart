@@ -1,0 +1,54 @@
+<%- include ('../layouts/adminheader.ejs') -%>
+
+
+<script>
+    document.getElementById('pr').classList.add('active')
+</script>
+<div style="margin: 30px;">
+
+<h2 class="page-title" style="color: black;">Products</h2>
+<button><a href="/admin/products/addproduct" style="color: black;">Add a new Product</a></button>
+<br><br>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<% if(count>0){%>
+<table class="table table-striped">
+
+    <thead>
+        <tr class="home">
+            <th>Product</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Product Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% products.forEach((pro)=>{ %>
+        <tr id="id_<%= pro._id %>" class="<%= pro.title %>">
+            <td><%= pro.title %></td>
+            <td>₹<%= parseFloat(pro.price).toFixed(2)%></td>
+            <td><%= pro.category %></td>
+            <td><%if(pro.image==""){%>
+                <img src="/images/noimage.png">
+            <%}else{%>
+            <img src="/product_images/<%= pro._id%>/<%=pro.image%>" height="100px" width="120px">  
+            <%}%>
+            </td>
+
+            <td><a class="a1" href="/admin/products/editproduct/<%= pro._id %>">Edit</a></td>
+            <td><a class="a1 confirmDeletion" href="/admin/products/deleteproduct/<%= pro._id%>">Delete</a></td>
+            
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+<%}else{%>
+    <h3 style="color: black;">There are no Products...!!!</h3>
+<%}%>
+</div><br><br>
+<%- include('../layouts/footer') %>

@@ -1,0 +1,74 @@
+<%- include ('./layouts/h.ejs') -%>
+</div>
+</div>
+</div>
+
+    <div class="tab">   
+        <div class="pro">
+            <h2>Profile</h2>
+        </div>   
+        <table class="table table-hover">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td><%=name%></td>
+                    <td><a href="/profile/<%=userid%>/change">Edit</a></td>
+                </tr>            
+                <tr>
+                    <th>E-Mail</th>
+                    <td><%=email%></td>
+                    <td><a href="/profile/<%=userid%>/change">Edit</a></td>
+
+                </tr>
+                <tr>
+                    <th>Mobile No</th>
+                    <td><%=num%></td>
+                    <td><a href="/profile/<%=userid%>/change">Edit</a></td>
+                    
+                </tr>
+                <tr>
+                    <th>User ID</th>
+                    <td><%=userid%></td>
+                    <td><a href="/profile/<%=userid%>/change">Edit</a></td>
+
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <%if(user.address===""){ %><td>No Address Found</td> <%}else{%><td><%=user.address%></td><%}%> 
+                    <td><a href="/profile/<%=userid%>/change">Add/Change</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pro">
+            <h2>Orders</h2>
+        </div>
+        <table class="table table-hover">
+            <tbody>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Product</th>
+                    <th>qty</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+                <%order.forEach((o)=>{
+                    console.log("in")%>
+                    <tr>
+                        <td><%=o._id%></td>
+                        <%product.forEach((pro)=>{
+                            if(o.pid==pro._id){%>
+                        <td><%=pro.title%></td>
+                                          
+                            <td><%=o.qty%></td>
+                            <td>Confirmed</td>
+                            <td><a href="/products/<%=pro.category%>/<%=pro.slug%>">View</a></td>
+                            <td><a href="/cart/order/cancel/<%=o._id%>">Cancel</a></td>
+                    </tr>
+                    <%}})%> 
+                    <%})%>
+                 </tbody>
+         </table>  
+
+    </div>
+</body>
+</html>

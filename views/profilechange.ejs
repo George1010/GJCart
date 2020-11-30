@@ -1,0 +1,43 @@
+<%- include ('./layouts/h.ejs') -%>
+</div>
+</div>
+</div>
+
+    <div class="tab">   
+        <div class="pro">
+            <h2>Profile</h2>
+        </div>   
+        <form action="/profile/<%=userid%>/change" method="POST">
+        <table class="table table-hover">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td><input type="text" value="<%=name%>" name="name"></td>
+                </tr>            
+                <tr>
+                    <th>E-Mail</th>
+                    <td><input type="text" value="<%=email%>" name="email"></td>
+
+                </tr>
+                <tr>
+                    <th>Mobile No</th>
+                    <td><input type="text" value="<%=num%>" name="mob"></td>
+                    
+                </tr>
+                <tr>
+                    <th>User ID</th>
+                    <td><input type="text" value="<%=userid%>" name="userid"></td>
+
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td><input type="text" value="<%=user.address%>" name="address"></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <input type="submit" value="Update">
+    </form>
+    </div>
+</body>
+</html>

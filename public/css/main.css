@@ -1,0 +1,280 @@
+*{
+	margin:0;
+}
+body{
+	background-color: #d7fbf7;
+}
+.navbar{
+	background-color: cadetblue;
+	width:100%;
+	padding: 0px;
+}
+ul{
+	list-style: none;
+	margin: 0;
+}
+.a1{
+	color: black;
+}
+.search{
+	width: 30vw;
+	text-align: center;
+	height: 25px;
+	margin-left: 25vw;
+	margin-right: 5px; 
+	border-radius: 5px;
+	border-style: none;
+	outline: none;
+}
+
+.but{
+	height: 25px;
+	border-radius: 5px;
+	border-style: none;
+	outline: none;
+	background-color: green;
+	color:white;
+
+
+}
+.row12{
+	display:flex;
+	width:100%;
+	flex-wrap: wrap;
+}
+a:hover{
+	text-decoration: none;
+	color:white;
+}
+.row1{
+	padding-left:50px;
+	background-color: #20ffd114;
+	padding:50px;
+
+	width:100%;
+	box-shadow:0 0 15px 5px cadetblue ;
+}
+li{
+	display: inline-block;
+	padding: 20px;
+}
+.a{
+	color:white;
+	text-decoration: none;
+	height: 150px;
+
+}
+.a:hover{
+	text-decoration: none;
+}
+li:hover{
+	background-color: rgb(155, 193, 194);
+
+	color: black;
+
+}
+.active{
+	background-color: white;
+	color: black;
+}
+.active .a{
+	color: black;
+}
+li:hover .a{
+	color:black;
+}
+.back{
+	background-color: rgb(95, 226, 154);
+	border-radius: 10px;
+	color: black;
+	box-shadow: 0 0 15px rgb(187, 255, 187);
+}
+.act{
+	background-color: cadetblue !important;
+}
+.act .l{
+	color: white;
+
+}
+.l{
+	color: black;
+}
+.list-group-item{
+	background-color: rgb(191, 231, 231);
+}
+.align{
+	margin:0px;
+	
+	padding:10px;
+	width:250px;
+	text-align: center;
+	box-shadow: 5px 5px 10px cadetblue;
+	transition:box-shadow 2s;
+}
+.pimage{
+	height: 200px;width: 200px;
+}
+.vd{
+	color: cadetblue;
+}
+.align:hover{
+	box-shadow: -5px -5px 15px cadetblue;
+}
+.gallery{
+    margin: 0px;
+    padding: 0px;}
+.table td{
+	vertical-align:middle !important;
+}
+.msg{
+	background-color: rgb(207, 98, 98);
+	color:white;
+	padding:5px;
+}
+.proimg{
+	border:1px solid black;
+	width: 94px;
+}
+.proimg:hover{
+	box-shadow: 0 0 3px 3px rgb(129, 168, 162);
+}
+.spi{
+	height: 400px;width:inherit;border: 1px solid black;
+}
+.gl{
+	padding-left: 12.5%;
+}
+.holder{
+	width:400px;
+}
+.dropbtn {
+	margin:0px;
+	background-color: cadetblue;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	outline:none;
+	cursor: pointer;
+  }
+
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+	background-color:  rgb(155, 193, 194);
+	color:black;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+	position: relative;
+	outline:none;
+	display: inline-block;
+  }
+  .dropdown1{
+	position: relative;
+	outline:none;
+	display: none;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+
+
+
+
+@media only screen and (max-width:535px) {
+	.row12{
+		padding-left:5px;
+		display:flex;
+		}
+
+	h4{
+		font-size:15px;
+	}
+	.holder{
+		width:200px;
+	}
+	h3{
+			font-size:15px;
+	}
+
+	.pimage{
+		height: 100px;width: 100px;
+	}
+	.vd{
+		color: cadetblue;
+	}
+	.align{
+		width:150px;
+		
+	}
+	.gl{
+		padding-left: 5px;
+		display:flex;
+		flex-direction: column;
+
+	}
+	
+	.spi{
+		width:250px;
+		height:200px;
+	}
+	.proimg{
+		border:1px solid black;
+		width: 50px;
+	}
+	h2{
+		font-size: 15px !important;
+	}
+	.col1{
+		padding-left:5px !important;
+	}
+	.row1{
+
+		margin-left: 10px;
+		margin-right:10px;
+	}
+
+}
+
+
+
+
+/*For Mobile Users*/
+
+
+
+
+
+
+
+
+
+
+
+
+.tab{
+	padding:50px;
+}

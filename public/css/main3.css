@@ -1,0 +1,11 @@
+.ab{
+    width:100%;
+    justify-content:center;
+    text-align: center;
+    padding:25px;
+    display:flex;
+}
+.pimage{
+    width:100px;
+    height:90px;
+}

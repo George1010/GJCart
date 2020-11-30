@@ -1,0 +1,30 @@
+.formgroup{
+    padding:10px;
+}
+input[type=text]{
+    width:100%;
+}
+textarea{
+    width: 100%;
+    height: 100px;
+}
+.cont{
+    margin:30px;
+}
+h2{
+    color: black;
+}
+.a{
+    color: black;
+}
+
+#imgPreview{
+    margin: 20px;
+    height: 100px;
+    width: 100px;
+}
+#imgPeview{
+    margin: 20px;
+    height: 100px;
+    width: 100px;
+}

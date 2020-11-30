@@ -1,0 +1,53 @@
+<%- include ('../layouts/adminheader.ejs') -%>
+
+<script>
+    document.getElementById('c').classList.add('active')
+</script>
+<div style="margin: 30px;">
+<h2 class="page-title" style="color: black;">Category</h2>
+<button><a href="/admin/cat/addcat" style="color: black;">Add a new Category</a></button>
+<br><br>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+
+<table class="table table-striped sorting">
+
+    <thead>
+        <tr class="home">
+            <th>Title</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% categories.forEach(function(categories){ %>
+        <tr id="id_<%= categories._id %>" class="<%= categories.slug %>">
+            <td><%= categories.title %></td>
+            <td><a class="a1" href="/admin/cat/editcat/<%= categories._id %>">Edit</a></td>
+ 
+            <td><a class="a1 confirmDeletion" href="/admin/cat/deletecat/<%= categories._id%>">Delete</a></td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<script>
+
+    $('tbody').sortable({
+
+        placeholder: "ui-state-hightlight",
+        update: function () {
+            var ids = $('tbody').sortable("serialize");
+            var url = "/admin/pages/reorder";
+            
+            $.post(url, ids);
+        }
+
+    });
+
+</script>
+</div><br><br><br><br><br><br><br>
+<%- include('../layouts/footer') %>

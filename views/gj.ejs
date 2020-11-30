@@ -1,0 +1,339 @@
+<head>
+<%- include ('./layouts/header1.ejs');%>
+
+
+<link rel="shortcut icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+    <style>
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; 
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+    background-color: #d7fbf7;
+  line-height: 1.6; 
+}
+
+.container {
+  width: 100%;
+  margin: 2rem auto; 
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 5vw);
+  grid-gap: 1.5rem; 
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;   box-shadow:0 0 18px 5px cadetblue;
+
+}
+
+.gallery__item--1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+  /** Alternative Syntax **/
+  /* grid-column: 1 / span 2;  */
+  /* grid-row: 1 / span 2; */
+}
+
+.gallery__item--2 {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 6;
+
+  /** Alternative Syntax **/
+  /* grid-column: 3 / span 2;  */
+  /* grid-row: 1 / span 2; */
+}
+
+.gallery__item--3 {
+  grid-column-start: 6;
+  grid-column-end: 10;
+  grid-row-start: 1;
+  grid-row-end: 6;
+
+  /** Alternative Syntax **/
+  /* grid-column: 5 / span 4;
+  grid-row: 1 / span 5; */
+}
+
+.gallery__item--4 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 6;
+
+  /** Alternative Syntax **/
+  /* grid-column: 1 / span 4;  */
+  /* grid-row: 3 / span 3; */
+}
+
+.gallery__item--5 {
+  grid-column-start: 1;
+  grid-column-end: 10;
+  grid-row-start: 6;
+  grid-row-end: 15;
+
+  /** Alternative Syntax **/
+  /* grid-column: 1 / span 4; */
+  /* grid-row: 6 / span 3; */
+}
+
+.gallery__item--6 {
+  grid-column-start: 5;
+  grid-column-end:10;
+  grid-row-start: 6;
+  grid-row-end: 10;
+
+  /** Alternative Syntax **/
+  /* grid-column: 5 / span 4; */
+  /* grid-row: 6 / span 3; */
+}
+
+.middle1 {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+top: 49%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle2 {
+  transition: .5s ease;
+  opacity: 0;
+  top: 49%;
+  left: 49%;
+
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle3 {
+  transition: .5s ease;
+  opacity: 0;
+  top: 49%;
+  right: 13%;
+
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle4 {
+  transition: .5s ease;
+  opacity: 0;
+  left: 25%;
+    top: 63%;
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle5 {
+  transition: .5s ease;
+  opacity: 0;
+  top: 116%;
+    left: 50%;
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.gallery__item:hover {
+    opacity: 0.8;
+}
+
+
+.gallery__item--1:hover .middle1 {
+  opacity: 1;
+}
+.gallery__item--2:hover .middle2 {
+  opacity: 1;
+}
+.gallery__item--3:hover .middle3 {
+  opacity: 1;
+}
+.gallery__item--4:hover .middle4 {
+  opacity: 1;
+}
+.gallery__item--5:hover .middle5 {
+  opacity: 1;
+}
+.text {
+    width:100%
+    ;
+    height: 100%
+    ;
+    top:0px;
+    left:0px;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  padding: 16px 32px;
+}
+@media only screen and (max-width:1250px) {
+    .middle5 {
+  transition: .5s ease;
+  opacity: 0;
+  top: 96%;
+    left: 50%;
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle4 {
+  transition: .5s ease;
+  opacity: 0;
+  left: 31%;
+    top: 53%;
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+}
+@media only screen and (max-width:750px) {
+    .text {
+    width:100%
+    ;
+    height: 100%
+    ;
+    top:0px;
+    left:0px;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 16px 32px;
+}
+}
+@media only screen and (max-width:535px) {
+    .middle1 {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+top: 39%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle2 {
+  transition: .5s ease;
+  opacity: 0;
+  top: 46%;
+  left: 47%;
+
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle3 {
+  transition: .5s ease;
+  opacity: 0;
+  top: 46%;
+  left: 68%;
+
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle5 {
+  transition: .5s ease;
+  opacity: 0;
+  top: 86%;
+    left: 50%;
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle4 {
+  transition: .5s ease;
+  opacity: 0;
+  left: 19%;
+    top: 52%;
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text {
+    width:100%
+    ;
+    height: 100%
+    ;
+    top:0px;
+    left:0px;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  padding: 16px 32px;
+}
+}
+    </style>
+
+  
+
+
+        <div class="container">
+            <div class="gallery">
+                <figure class="gallery__item gallery__item--1">
+                    <a class="l"  href="/products"><img src="/images/all.png" alt="Gallery image 1" class="gallery__img">
+                    </a>
+
+                </figure>
+                <% var i=2;%>
+                    <% categories.forEach(function(c){ %>
+                        <figure class="gallery__item gallery__item--<%=i%>">
+
+                        <a class="l" href="/products/<%= c.title%>"><img src="/images/<%=c.title%>.jpg" alt="Gallery image <%=i%>" class="gallery__img"></a>
+                        <div class="middle<%=i%>">
+                            <div class="text"><%=c.title%></div>
+
+                        </div>
+                        <%i++%>
+                    </figure>
+
+                    <% }); %>
+            </div>
+        </div>
+
+
+                    
+    </body>
+
+
+    
+<footer>
+    <%-include ('./layouts/footer.ejs');%>
+</footer>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SHOP</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+	<div class="navbar">
+		<ul>
+			<li><a class="a" href="#">SHOPPERS ZONE</a></li>
+			<div class="dropdown">
+				<button onclick="myFunction()" class="dropbtn">Categories</button>
+				<div id="myDropdown" class="dropdown-content">
+					<% categories.forEach(function(c){ %>
+						<a class="l" href="/products/<%= c.title%>"><%= c.title %></a>
+					<% }); %>
+				</div>
+			  </div>
+			<%pages.forEach((page)=>{
+				if(page.slug=="home"){%>
+					<li><a class="a" href="/"><%= page.title%></a></li>
+				<%}
+
+			})%>
+			<%if(typeof email!=="undefined"){%>
+			<li><a  class="a" href="/cart/checkout">Cart(<%=cart%>)</a></li>
+			
+				<li><a class="a"  href="/user/logout">Logout</a></li>
+				<li><a class="a"  href="/profile/<%=id%>"><%=name%></a></li>
+				
+				<%}else{%>
+	
+			<li><a class="a" href="/user/login">Login</a></li>
+			<li><a class="a" href="/user/register">Register</a></li>
+					<%}%>
+		</ul>
+	</div>
+	
+	  </div>
+	<script>
+	function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+	</script>
+	<br><br>
+	<div class="container">
+
+		<div class="row">
+
+				

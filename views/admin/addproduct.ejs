@@ -1,0 +1,74 @@
+<%- include ('../layouts/adminheader.ejs') -%>
+<script>
+    document.getElementById('pr').classList.add('active')
+</script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+
+<link rel="stylesheet" type="text/css" href="/css/addpage.css">
+<div class="cont">
+<h2>ADD PRODUCT</h2><br>
+<button class="back"><a href="/admin/products" class="a">Back to Products</a></button><br><br>
+
+<form method="POST" action="/admin/products/addproduct" enctype="multipart/form-data">
+    <div class="formgroup">
+        <label for="">TITLE</label>
+        <input type="text" name="title" value="<%= title%>" placeholder="title">
+    </div>
+    <div class="formgroup">
+        <label for="" style="color: black;">Category</label>
+        <select name="Category" class="formgroup">
+            <% categories.forEach((cat)=>{%>
+                <option value=<%=cat.title %>><%=cat.title%></option>
+            <%});%>
+
+        </select>
+    </div>
+    <div class="formgroup">
+        <label for="">SLUG</label>
+        <input type="text" name="slug" value="<%= slug%>" placeholder="slug">
+        </div>
+    <div class="formgroup">
+        <label for="">Description</label>
+        <textarea name="content"><%= desc %></textarea>
+    </div>
+    <div class="formgroup">
+        <label for="">Price</label>
+        <input type="text" name="price" value="<%= price%>" placeholder="Price">
+    </div>
+
+    <div class="formgroup">
+        <label>Image</label>
+            <input type="file" name="image" id="image">
+            <img src="/images/noimage.png" id="imgPreview">
+    </div>
+<br><br>
+    <button class="back">SUBMIT</button>
+    <br><bR><br><br><br><br><br><br><br><br><br><br><br><br>
+</form>
+</div>
+
+
+
+<script>
+
+
+    function readURL(input) {
+        if(input.files && input.files[0])
+        {
+            var reader=new FileReader();
+            reader.onload=function(e){
+                $("#imgPreview").attr('src',e.target.result).width(100).height(100);
+
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#image").change(function(){
+        readURL(this);
+
+    })
+</script>
+<%- include ('../layouts/footer.ejs') -%>
